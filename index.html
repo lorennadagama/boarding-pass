@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boarding Pass - Ana Lucia</title>
+    <title>Boarding Pass - Iberia</title>
     <style>
         * {
             margin: 0;
@@ -13,71 +13,82 @@
         }
 
         body {
-            background-color: #f0f0f0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            background-color: #f0f0f0;
         }
 
         .boarding-pass {
-            width: 600px;
-            background-color: #fff;
+            width: 700px;
+            background-color: #ffffff;
             border-radius: 10px;
-            padding: 30px;
+            padding: 20px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            position: relative;
             font-size: 14px;
-            border: 1px solid #ddd;
+            color: #333;
+            border: 1px solid #ccc;
+            display: flex;
+            flex-direction: column;
         }
 
-        .boarding-pass-header {
+        .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 2px solid #ddd;
+            border-bottom: 2px solid #d92332;
             padding-bottom: 10px;
+            margin-bottom: 15px;
         }
 
-        .airline-logo {
+        .header .logo {
             font-size: 24px;
             font-weight: bold;
-            color: #1e3d58; /* Dark blue like airline logos */
+            color: #d92332; /* Iberia red */
         }
 
-        .boarding-pass-header div {
+        .header .flight-info {
             text-align: center;
-        }
-
-        .boarding-pass-header span {
             font-size: 12px;
             color: #555;
         }
 
-        .flight-info {
-            margin-top: 20px;
-        }
-
-        .flight-info div {
-            margin-bottom: 8px;
+        .boarding-info {
             display: flex;
             justify-content: space-between;
+            margin-bottom: 20px;
         }
 
-        .flight-info .info {
+        .boarding-info div {
+            width: 30%;
+        }
+
+        .boarding-info span {
             font-weight: bold;
-            color: #1e3d58;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .boarding-info .details {
+            font-size: 14px;
+            color: #555;
         }
 
         .qr-code {
+            text-align: center;
             margin-top: 20px;
-            display: flex;
-            justify-content: center;
         }
 
         .qr-code img {
-            width: 100px;
-            height: 100px;
+            width: 120px;
+            height: 120px;
+        }
+
+        .barcode {
+            margin-top: 20px;
+            height: 40px;
+            background: repeating-linear-gradient(90deg, black 0px, black 2px, white 2px, white 4px);
         }
 
         .footer {
@@ -88,48 +99,68 @@
             font-style: italic;
         }
 
-        .barcode {
-            margin-top: 20px;
-            height: 40px;
-            background: repeating-linear-gradient(
-                90deg,
-                black 0px,
-                black 2px,
-                white 2px,
-                white 4px
-            );
-        }
     </style>
 </head>
 <body>
 
     <div class="boarding-pass">
-        <div class="boarding-pass-header">
-            <div class="airline-logo">✈️ Love Airlines</div>
-            <div>
-                <span>Voo: LOV 0219</span><br>
+        <!-- Header Section -->
+        <div class="header">
+            <div class="logo">Iberia</div>
+            <div class="flight-info">
+                <span>Voo: IB 3145</span>
                 <span>Data: 19/02/2025</span>
             </div>
-            <div>
-                <span>PORTÃO</span><br>
+            <div class="gate">
+                <span>Portão</span>
                 <span>❤️</span>
             </div>
         </div>
 
-        <div class="flight-info">
-            <div><span class="info">Passageira:</span> Ana Lucia Falconi Arroyo</div>
-            <div><span class="info">Origem:</span> LIM - Lima, Peru</div>
-            <div><span class="info">Destino:</span> MAD - Madrid, Espanha</div>
-            <div><span class="info">Assento:</span> VIP</div>
+        <!-- Boarding Information Section -->
+        <div class="boarding-info">
+            <div>
+                <span>Passageira</span>
+                <div class="details">Ana Lucia Falconi Arroyo</div>
+            </div>
+            <div>
+                <span>Origem</span>
+                <div class="details">LIM - Lima, Peru</div>
+            </div>
+            <div>
+                <span>Destino</span>
+                <div class="details">MAD - Madrid, Espanha</div>
+            </div>
         </div>
 
+        <!-- Seat and Boarding Information -->
+        <div class="boarding-info">
+            <div>
+                <span>Assento</span>
+                <div class="details">VIP</div>
+            </div>
+            <div>
+                <span>Classe</span>
+                <div class="details">Econômica</div>
+            </div>
+            <div>
+                <span>Embarque</span>
+                <div class="details">19:00</div>
+            </div>
+        </div>
+
+        <!-- QR Code -->
         <div class="qr-code">
-            <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://teamo.com" alt="QR Code">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://teamo.com" alt="QR Code">
         </div>
 
+        <!-- Barcode -->
         <div class="barcode"></div>
 
-        <div class="footer">Apresente este bilhete para embarcar no voo do amor. 💕</div>
+        <!-- Footer Section -->
+        <div class="footer">
+            Apresente este bilhete para embarcar no voo do amor. 💕
+        </div>
     </div>
 
 </body>
